@@ -10,6 +10,20 @@
 Create a function that has temperature as parameter.
 Based on temperature, it should return a string with what to wear.
 */
+const tempClothesCheck = temp => {
+    if (temp > 18) {
+        return "Shorts and t-shirt weather!"
+    } else if (temp > 10) {
+        return "long shirt and pants, it's a bit chilly"
+    } else if (temp > 0) {
+        return "It's cold, bring a warm jacket, and a hat and gloves"
+    } else if (temp > -10) {
+        return "Brrrrr, it's freezing. Bring very warm clothes"
+    } else {
+        return "No way, stay inside and enjoy some hot chocolate under the blanket"
+    }
+}
+console.log(tempClothesCheck(12)) // prints: long shirt and pants, it's a bit chilly
 
 
 
@@ -20,9 +34,46 @@ You call the function with the number of times you want to roll.
 Every time a 6 is rolled, log out "You just hit 6!"
 */
 
+// Math.random - randomly get number between 0 and 1
+// Math.floor - round down to whole number
+// Multiply by 6 and plus 1 to get between 1-6 (no 0)
+const getDiceRoll = () => Math.floor((Math.random() * 6) + 1);
+
+// Loop timesToRoll amount of times, print result every loop
+// If 6, print "You just hit 6!"
+const rollTheDice = timesToRoll => {
+    for (let i = 0; i < timesToRoll; i++) {
+        const diceRoll = getDiceRoll()
+        if (diceRoll === 6) {
+            console.log("You just hit 6!")
+        } else {
+            console.log(diceRoll)
+        }
+    }
+}
+rollTheDice(2)
 
 // Part 2 - If the user hits 6 in every roll, log out "Jackpot"
+// (Added JP to some var names to differ from above part)
+const getDiceRollJP = () => Math.floor((Math.random() * 6) + 1);
+const rollTheDiceJP = timesToRoll => {
+    let sixResultTracker = 0 // We track the amount of times we roll 6, starting at 0
+    for (let i = 0; i < timesToRoll; i++) {
+        const diceRoll = getDiceRollJP()
+        if (diceRoll === 6) {
+            sixResultTracker = sixResultTracker + 1 // In every loop, if we roll 6 we add 1 to tracker
+            console.log("You just hit 6!")
+        } else {
+            console.log(diceRoll)
+        }
+    }
+    if (sixResultTracker === timesToRoll) { // If the tracker is the same as times we roll, print jackpot
+        console.log("Jackpot! You rolled all 6!")
+    }
 
+
+}
+rollTheDiceJP(2)
 
 /*
 3) Build a sentiment analyzer
