@@ -55,7 +55,7 @@ rollTheDice(2)
 
     /*
     * Part 2 - If the user hits 6 in every roll, log out "Jackpot"
-    * (Added JP to some var names to differ from above part)
+    * (Added JP (jackpot) to some variable names to differ from above part)
     */
 const getDiceRollJP = () => Math.floor((Math.random() * 6) + 1);
 const rollTheDiceJP = timesToRoll => {
@@ -146,6 +146,12 @@ function characterCount(stringToAnalyze) {
         }
     }
     characterCountResult["total length"] = stringToAnalyze.length
+    // Sort character objects alphabetically
+    characterCountResult.characters.sort(function(a, b) {
+        if (a.character > b.character) {return 1;}
+        if (a.character < b.character) {return -1;}
+        return 0;
+    })
     return characterCountResult;
 }
 console.log(characterCount("happy"));
@@ -158,3 +164,21 @@ console.log(characterCount("happy"));
     * To consider:
     * What happens if the function is called with an argument that is not a number?
     */
+function ccFormatter(ccNumber) {
+    // Create base object
+    const ccResult = {
+        originalCC: 0,
+        formattedCC: 0,
+    }
+    // Check if input is number, and 16 digits long - if not, return invalid input text
+    if (typeof ccNumber === "number" && ccNumber.toString().length === 16) {
+        ccResult.originalCC = ccNumber;
+        let ccAsString = ccNumber.toString() // Convert number to string
+        ccAsString = ccAsString.match(/.{4}/g) // Convert string to array, split every 4 characters
+        ccResult.formattedCC = `${ccAsString[0]} ${ccAsString[1]} ${ccAsString[2]} ${ccAsString[3]}` // Insert arrays into formattedCC
+    } else {
+        return "Invalid Credit Card input \nMake sure it's only numbers and 16 digits long"
+    }
+    return ccResult
+}
+console.log(ccFormatter(1111222233334444))
