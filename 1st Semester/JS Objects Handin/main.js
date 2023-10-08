@@ -5,11 +5,11 @@
 --------------------------
 */
 
-/*
-1) What to wear
-Create a function that has temperature as parameter.
-Based on temperature, it should return a string with what to wear.
-*/
+    /*
+    * 1) What to wear
+    * Create a function that has temperature as parameter.
+    * Based on temperature, it should return a string with what to wear.
+    */
 const tempClothesCheck = temp => {
     if (temp > 18) {
         return "Shorts and t-shirt weather!"
@@ -27,12 +27,12 @@ console.log(tempClothesCheck(12)) // prints: long shirt and pants, it's a bit ch
 
 
 
-/*
-2) Dice game
-Create a function that simulators a dice roll.
-You call the function with the number of times you want to roll.
-Every time a 6 is rolled, log out "You just hit 6!"
-*/
+    /*
+    * 2) Dice game
+    * Create a function that simulators a dice roll.
+    * You call the function with the number of times you want to roll.
+    * Every time a 6 is rolled, log out "You just hit 6!"
+    */
 
 // Math.random - randomly get number between 0 and 1
 // Math.floor - round down to whole number
@@ -53,15 +53,17 @@ const rollTheDice = timesToRoll => {
 }
 rollTheDice(2)
 
-// Part 2 - If the user hits 6 in every roll, log out "Jackpot"
-// (Added JP to some var names to differ from above part)
+    /*
+    * Part 2 - If the user hits 6 in every roll, log out "Jackpot"
+    * (Added JP to some var names to differ from above part)
+    */
 const getDiceRollJP = () => Math.floor((Math.random() * 6) + 1);
 const rollTheDiceJP = timesToRoll => {
     let sixResultTracker = 0 // We track the amount of times we roll 6, starting at 0
     for (let i = 0; i < timesToRoll; i++) {
         const diceRoll = getDiceRollJP()
         if (diceRoll === 6) {
-            sixResultTracker = sixResultTracker + 1 // In every loop, if we roll 6 we add 1 to tracker
+            sixResultTracker++ // In every loop, if we roll 6 we add 1 to tracker
             console.log("You just hit 6!")
         } else {
             console.log(diceRoll)
@@ -75,27 +77,84 @@ const rollTheDiceJP = timesToRoll => {
 }
 rollTheDiceJP(2)
 
-/*
-3) Build a sentiment analyzer
-A sentiment analyzer is some functionality that figures out how positive/negative a sentence is.
-Eg. "I am mega super awesome happy" should have a high score.
-"I hate doing boring stuff" should have a low score.
-Create a function that takes a string as parameter.
-Calling the function will return an object with score, positiveWords and negativeWords.
-*/
+    /*
+    * 3) Build a sentiment analyzer
+    * A sentiment analyzer is some functionality that figures out how positive/negative a sentence is.
+    * Eg. "I am mega super awesome happy" should have a high score.
+    * "I hate doing boring stuff" should have a low score.
+    * Create a function that takes a string as parameter.
+    * Calling the function will return an object with score, positiveWords and negativeWords.
+    */
+// Define what words are positive and negative
+const sentimentAnalyzerWords = {
+    definedPositiveWords: ["happy", "awesome", "cool", "sweet", "amazing", "glad", "smile"],
+    definedNegativeWords: ["sad", "angry", "bad", "unbearable", "worse", "dumb", "stupid"]
+}
+// Function to analyze text string
+// Splits given sentence into array for each word, and loops through every word
+// If word is positive, add 1 to score and push word to positive word array
+// If negative, subtract 1 from score and push word to negative word array
+// Return result object with final score, positive and negative word arrays
+function sentimentAnalyzer(textToAnalyze) {
+    const wordSplit = textToAnalyze.split(" ");
+    const sentimentResultObject = {
+        Score: 0,
+        positiveWords: [],
+        negativeWords: []
+    }
+    for (const element of wordSplit) {
+        if (sentimentAnalyzerWords.definedPositiveWords.includes(element)) {
+            sentimentResultObject.Score++
+            sentimentResultObject.positiveWords.push(element)
+        } else if (sentimentAnalyzerWords.definedNegativeWords.includes(element)) {
+            sentimentResultObject.Score--
+            sentimentResultObject.negativeWords.push(element)
+        }
+    }
+    return sentimentResultObject;
+}
 
+console.log(sentimentAnalyzer("today was a super happy awesome cool day. but it also had stupid bad moments"))
 
-/*
-4) Character frequencies
-Write a function that counts the frequency of characters in a string.
-*/
+    /*
+    * 4) Character frequencies
+    * Write a function that counts the frequency of characters in a string.
+    */
+function characterCount(stringToAnalyze) {
+    const characterSplit = stringToAnalyze.split(""); //Split every character into array
+    const characterCountResult = { //Sets object base to return
+        characters: [],
+        "total length": 0,
+        "unique characters": 0
+    }
+    // Loop every character in split array
+    for (const element of characterSplit) {
+        let characterExists = false;
+        // Loop through every object in characters array and see if matches character from split array
+        // If match, increase count by 1 and exit loop
+        for (const characterObject of characterCountResult.characters) {
+            if (characterObject.character === element) {
+                characterExists = true;
+                characterObject.count++;
+                break;
+            }
+        }
+        // If no match, add character and count object, and increase unique characters count by 1
+        if (!characterExists) {
+            characterCountResult.characters.push({character: element, count: 1});
+            characterCountResult["unique characters"]++;
+        }
+    }
+    characterCountResult["total length"] = stringToAnalyze.length
+    return characterCountResult;
+}
+console.log(characterCount("happy"));
 
-
-/*
-5) Credit Card number formatter
-Create a function that takes a number as parameter.
-The function should return the same number, but with a space after every 4 characters.
-It should be 16 characters long (so 4 groups of 4 numbers).
-To consider:
-    What happens if the function is called with an argument that is not a number?
-*/
+    /*
+    * 5) Credit Card number formatter
+    * Create a function that takes a number as parameter.
+    * The function should return the same number, but with a space after every 4 characters.
+    * It should be 16 characters long (so 4 groups of 4 numbers).
+    * To consider:
+    * What happens if the function is called with an argument that is not a number?
+    */
