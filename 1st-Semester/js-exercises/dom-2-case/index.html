@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CO2 Calculator</title>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <script defer src="main.js"></script>
+</head>
+<body>
+    <div>
+        <h1>CO2 Emissions Calculator</h1>
+        <div class="description">
+            <p>Input how many kilometers you drive in a single week, and select the type of vehicle you own to calculate your weekly CO2 emissions!</p>
+            <a target="_blank" href="https://8billiontrees.com/carbon-offsets-credits/how-much-co2-does-a-car-emit-per-mile/">Source: 8 Billion Trees</a>
+        </div>
+        <label class="input-fields" id="input-fields">
+            <input name="kilometers" type="number" id="input-km">
+            <p>km</p>
+            <select name="vehicle-type" id="input-vehicle">
+                <option value="">--Select the type of vehicle you drive--</option>
+                <option value="medium-petrol-car">Medium Petrol-Powered Car</option>
+                <option value="medium-diesel-car">Medium Diesel-Powered Car</option>
+                <option value="bus">Bus</option>
+                <option value="motorcycle">Motorcycle</option>
+                <option value="two-passenger-petrol-car">2-Passenger Petrol Car</option>
+                <option value="electric-car">Electric Car</option>
+                <option value="train">Train</option>
+            </select>
+        </label>
+        <div>
+            <button class="button-primary" id="calculate-button" type="button">Calculate</button>
+        </div>
+    </div>
+</body>
+</html>
