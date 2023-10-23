@@ -15,13 +15,13 @@
  * and see if you can incorporate them into your calculator!
  */
 const calculateButton = document.querySelector("#calculate-button");
-const textOutput = document.createElement("p")
-calculateButton.insertAdjacentElement("afterend", textOutput)
+
 calculateButton.addEventListener("click", function() {
     const getInputKM = document.querySelector("#input-km").value;
     const getInputVehicle = document.querySelector("#input-vehicle").value
+    const getOutputElement = document.querySelector("#calculated-result")
 
-    if (getInputKM && getInputVehicle) {
+    if (getInputKM > 0 && getInputVehicle) {
         let calculatedCO2 = 0
         if (getInputVehicle === 'medium-petrol-car') {
             calculatedCO2 = getInputKM * 192
@@ -38,9 +38,9 @@ calculateButton.addEventListener("click", function() {
         } else if (getInputVehicle === 'train') {
             calculatedCO2 = getInputKM * 41
         }
-        textOutput.textContent = ''
-        textOutput.textContent = `By driving ${getInputKM} km in a week in a ${getInputVehicle}, you've emitted ${calculatedCO2} CO2!`
-        document.querySelector("#input-km").value = "";
-        document.querySelector("#input-vehicle").value = "";
+
+        getOutputElement.textContent = `By driving ${getInputKM} km in a week, using a ${getInputVehicle}, you've emitted ${calculatedCO2} CO2!`
+    } else {
+        getOutputElement.textContent = `Invalid input. Make sure you've inputted a distance, and selected a vehicle type!`
     }
 })

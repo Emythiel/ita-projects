@@ -10,11 +10,11 @@
     <div>
         <h1>CO2 Emissions Calculator</h1>
         <div class="description">
-            <p>Input how many kilometers you drive in a single week, and select the type of vehicle you own to calculate your weekly CO2 emissions!</p>
+            <p>Input how many kilometers you drive in a single week, and select the type of vehicle you use to calculate your weekly CO2 emissions!</p>
             <a target="_blank" href="https://8billiontrees.com/carbon-offsets-credits/how-much-co2-does-a-car-emit-per-mile/">Source: 8 Billion Trees</a>
         </div>
         <label class="input-fields" id="input-fields">
-            <input name="kilometers" type="number" id="input-km">
+            <input name="kilometers" type="number" id="input-km" min="1">
             <p>km</p>
             <select name="vehicle-type" id="input-vehicle">
                 <option value="">--Select the type of vehicle you drive--</option>
@@ -29,6 +29,9 @@
         </label>
         <div>
             <button class="button-primary" id="calculate-button" type="button">Calculate</button>
+        </div>
+        <div>
+            <p id="calculated-result" class="calculated-result"></p>
         </div>
     </div>
 </body>
