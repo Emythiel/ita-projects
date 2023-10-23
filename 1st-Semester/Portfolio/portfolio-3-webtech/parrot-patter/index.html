@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parrot Patter</title>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <script defer src="main.js"></script>
+    <script defer src="upgradeMenu.js"></script>
+</head>
+<body>
+    <div>
+        <h1>Parrot Patter!</h1>
+        <p>Press the parrot to pat its head</p>
+        <p>Every pat rewards a seed, use seeds to upgrade your patting skills</p>
+    </div>
+    <div>
+        <p>Total head pats given:</p>
+        <p id="pat-counter" class="pat-counter">0</p>
+        <p>Seeds:</p>
+        <p id="seed-counter" class="seed-counter">0</p>
+    </div>
+    <div>
+        <button id="parrot-button" class="parrot-button" type="button"><img id="parrot-img" alt="" class="parrot-img" src="images/parrot.png"></button>
+    </div>
+    <div id="upgrade-menu" class="upgrade-menu">
+        <h2>Upgrades</h2>
+        <button id="upgrade-hands" class="upgrade-button" type="button">
+            <p class="upgrade-button-name">Improved Hands</p>
+            <p id="upgrade-hands-amount" class="upgrade-counter">1</p>
+            <p class="upgrade-button-price">Price:</p>
+            <p id="upgrade-hands-price" class="upgrade-counter">25</p>
+        </button>
+        <button id="upgrade-autopat" class="upgrade-button" type="button">
+            <p class="upgrade-button-name">Automatic Patter</p>
+            <p id="upgrade-autopat-amount">0</p>
+            <p class="upgrade-button-price">Price:</p>
+            <p id="upgrade-autopat-price" class="upgrade-counter">100</p>
+        </button>
+        <div class="upgrade-button-mouseover">
+            <p id="upgrade-button-mouseover-hands">Increase the amount of head pats you give with each click.</p>
+        </div>
+    </div>
+</body>
+</html>

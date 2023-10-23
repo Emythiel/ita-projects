@@ -1,0 +1,12 @@
+
+#parrot-button {
+    border: none;
+    background: none;
+}
+#parrot-img {
+    max-width: 420px;
+}
+
+.upgrade-button-mouseover {
+    display: none;
+}
