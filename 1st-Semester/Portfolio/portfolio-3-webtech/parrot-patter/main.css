@@ -1,12 +1,111 @@
+/*
+ * Color Scheme
+ */
+:root {
+    --color-text: #f5f5f5;
+    --color-text-header: #eee6bc;
+    --color-background: #1a1a1a;
+    --color-accent: #312d2b;
+    --color-button-enabled: #3c483c;
+    --color-button-disabled: #402d2a;
+}
 
+/*
+ * General Styling
+ */
+*  {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+    color: var(--color-text);
+    text-align: center;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*
+ * General body styling
+ */
+body {
+    display: flex;
+    background-color: var(--color-background);
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 64px;
+    margin-left: 32px;
+    margin-right: 32px;
+}
+body div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 12px;
+}
+h1 {
+    font-size: 48px;
+    color: var(--color-text-header);
+}
+
+/*
+ * Seed Counter Styling
+ */
+#pat-seed-counter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-left: 32px;
+    margin-right: 32px;
+}
+
+/*
+ * Parrot Button
+ */
 #parrot-button {
     border: none;
     background: none;
+}
+#parrot-button:hover {
+    cursor: pointer;
+    transform: scale(1.025);
+    transition: transform 0.1s ease-in-out;
+}
+#parrot-button:active {
+    transform: translateY(8px);
+    transition: transform 0.1s ease-in-out;
 }
 #parrot-img {
     max-width: 420px;
 }
 
-.upgrade-button-mouseover {
+hr {
+    margin: 16px;
+    border: 1px solid var(--color-accent);
+}
+
+/*
+ * Upgrade Menu
+ */
+h2 {
+    font-size: 32px;
+    color: var(--color-text-header);
+}
+#upgrade-menu h2, #upgrade-hands, #upgrade-autopat {
     display: none;
+}
+#upgrade-buttons {
+    flex-direction: row;
+}
+.upgrade-button {
+    margin: 12px;
+    padding: 8px;
+    background-color: var(--color-accent);
+    border: none;
+    display: flex;
+    flex-direction: column;
+}
+.upgrade-button p {
+    font-size: 20px;
 }
