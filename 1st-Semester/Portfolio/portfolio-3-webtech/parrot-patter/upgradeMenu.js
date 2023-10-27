@@ -1,6 +1,7 @@
 /*
  * Improved Hands Upgrade
  */
+
 // Get all needed elements
 const upgradeHandButton = document.querySelector("#upgrade-hands");
 const upgradeHandCounterElement = document.querySelector("#upgrade-hands-amount");
@@ -46,6 +47,7 @@ upgradeHandButton.addEventListener("mouseout", function() {
     upgradeHandButton.style.transform = "scale(1.0)";
     upgradeHandButton.style.cursor = "default";
 });
+
 
 /*
  * Automatic Patter Upgrade
