@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Fetch Exercises</title>
+    <link rel="stylesheet" href="main.css">
+    <script defer src="main.js"></script>
+</head>
+
+<body>
+
+    <div id="filter-inputs">
+        <div>
+            <button id="movies-all" class="button">Show all movies</button>
+            <button id="movies-after-2014" class="button">Show movies after 2014</button>
+        </div>
+
+        <div>
+            <label for="movie-search">Title:</label>
+            <input id="movie-search" class="input-field" name="movie-search" type="text">
+            <label for="movie-year">Year:</label>
+            <input id="movie-year" class="input-field" name="movie-year" type="number" min="1900" max="2024" step="1">
+            <label for="movie-rating-min">Minimum rating:</label>
+            <input id="movie-rating-min" class="input-field" name="movie-rating-min" type="number" min="0" max="10" step="0.1">
+        </div>
+    </div>
+
+    <div id="movie-list"></div>
+
+</body>
+
+</html>

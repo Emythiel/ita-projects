@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#input-and-results {
+    display: flex;
+}
+
+#movie-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 32px;
+}
+
+#movie-list ul {
+    flex-basis: 25%;
+}
