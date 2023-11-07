@@ -1,5 +1,63 @@
+/* Main body styling */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+body {
+    margin: 16px;
+}
+
+/* Header styling */
+header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 32px;
+}
+
+/* Line split style */
+hr {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+/* API and Search area styling */
+#api-key {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+#search-bar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+#search-bar button {
+    margin-left: 8px;
+}
+#amount-slider {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+
+/* Content styling */
+#gif-content {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+#gif-content h1 {
+    display: none;
+}
+
+#gif-content img {
+    margin: 32px;
+    padding: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#gif-content img:hover {
+    box-shadow: 0 0 10px 4px #565670;
+    transition: box-shadow 0.3s ease-in-out;
 }
