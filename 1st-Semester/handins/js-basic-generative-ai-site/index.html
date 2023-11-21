@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generative AI Exercise</title>
+    <link rel="stylesheet" href="main.css">
+    <script defer src="main.js"></script>
+</head>
+
+<body>
+
+<main>
+    <div>
+        <label for="api-key"></label>
+        <input id="api-key" placeholder="Input your Huggingface API key">
+
+        <h2>Generate your own story!</h2>
+        <p>Fill out the input fields and generate a little story</p>
+
+        <span id="input-span">
+            <label for="story-character">The story is about a: </label>
+            <input id="story-character" placeholder="Princess, Knight, Firefighter etc.">
+
+            <label for="story-name">Their name is: </label>
+            <input id="story-name" placeholder="Paul, Miranda, Alex etc.">
+
+            <label for="story-dream">They dream about: </label>
+            <input id="story-dream" placeholder="Saving the world, Become a scientist, go to space etc.">
+
+            <label for="story-rival">Who is your characters rival?</label>
+            <input id="story-rival" placeholder="John the carpenter, Mike the wizard, Anne the Dancer etc.">
+        </span>
+
+        <span>
+            <button type="button" class="generate-button">Generate story</button>
+            <p class="loading-text hidden"><b>Generating, please wait...</b></p>
+            <p class="error-text hidden"><b>Error: Missing some input fields</b></p>
+        </span>
+    </div>
+
+    <hr class="line-seperator hidden">
+
+    <div>
+        <p id="generated-text"></p>
+    </div>
+</main>
+
+</body>
+
+</html>

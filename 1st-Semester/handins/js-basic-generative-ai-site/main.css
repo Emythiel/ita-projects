@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: antiquewhite;
+    font-family: "Calisto MT", sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    max-width: 1000px;
+}
+
+div {
+    margin-top: 64px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    width: 400px;
+    padding: 4px;
+    margin-bottom: 8px;
+}
+
+#input-span {
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
+}
+
+span button {
+    margin-top: 8px;
+    padding: 8px;
+    background-color: #ecdcd9;
+    border-radius: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.error-text {
+    color: darkred;
+}
+
+hr {
+    margin-top: 16px;
+    margin-left: 32px;
+    margin-right: 32px;
+}
+
+#generated-text {
+    margin-left: 64px;
+    margin-right: 64px;
+}
+
+.hidden {
+    display: none;
+}
